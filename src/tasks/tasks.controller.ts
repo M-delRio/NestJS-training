@@ -39,8 +39,6 @@ export class TasksController {
 
   @Post()
   createTask(@Body() createTaskDto: CreateTaskDto): Task {
-    console.log();
-
     return this.tasksService.createTask(createTaskDto);
   }
 
@@ -54,8 +52,6 @@ export class TasksController {
 
   @Delete(':id')
   deleteTask(@Param('id') id: string): any {
-    console.log('here');
-
     return this.tasksService.deleteTask(id);
   }
 }
