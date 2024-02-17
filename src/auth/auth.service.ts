@@ -34,7 +34,6 @@ export class AuthService {
       await this.usersReposity.save(user);
     } catch (error) {
       if (error.code === '23505') {
-        // duplicate username
         throw new ConflictException('Username already exists');
       } else {
         throw new InternalServerErrorException();
